@@ -1,15 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { MainPageComponent } from './main-page/main-page.component';
+import { DbzAdminShellComponent } from './dbz-admin-shell/dbz-admin-shell.component';
 import { PersonajesComponent } from './personajes/personajes.component';
-import { AgregarPersonaje } from './agregar-personaje/agregar-personaje.component';
-import { DbzService } from './services/dbz.service';
+import { dbzService } from './services/dbz.service';
+import { CrearComponent } from './crear/crear.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
-  declarations: [MainPageComponent, PersonajesComponent, AgregarPersonaje],
-  exports: [MainPageComponent],
-  imports: [CommonModule, FormsModule],
-  providers: [DbzService],
+  declarations: [
+    DbzAdminShellComponent,
+    PersonajesComponent,
+    CrearComponent
+  ],
+  exports:[
+    DbzAdminShellComponent
+  ],
+  imports: [
+    CommonModule,
+    FormsModule
+  ],
+  providers:[
+    dbzService
+  ]
 })
-export class DbzModule {}
+export class DbzModule { }
