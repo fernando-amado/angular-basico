@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Personajes } from '../interfaces/dbz.interface';
 import { dbzService } from '../services/dbz.service';
 
@@ -13,9 +13,9 @@ export class CrearComponent {
   };
   constructor(private dbzService: dbzService) {}
   agregar() {
-    // if (this.nuevoPersonaje.nombre.trim().length === 0) {
-    //   return;
-    // }
+    if (this.nuevoPersonaje.nombre.trim().length === 0) {
+      return;
+    }
     this.dbzService.agregarPersonaje(this.nuevoPersonaje);
     this.nuevoPersonaje = {
       nombre: '',
